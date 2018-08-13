@@ -5,7 +5,6 @@ using UnityEngine;
 public class Object1 : MonoBehaviour {
 
      public GameObject ShipItem;
-		 public AudioSource Pickup;
 		 public Boolcheck boolBoy;
 
 void start (){
@@ -17,8 +16,8 @@ void start (){
 		if (other.gameObject.tag == "Player"){
 			Debug.Log("OBJECT IS NEAR");
 			boolBoy.items1 = true;
-			Pickup.Play ();
 			ShipItem.SetActive(false);
 		}
+
 	}
 }

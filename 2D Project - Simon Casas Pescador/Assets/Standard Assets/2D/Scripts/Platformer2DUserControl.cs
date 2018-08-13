@@ -7,6 +7,7 @@ namespace UnityStandardAssets._2D
     [RequireComponent(typeof (PlatformerCharacter2D))]
     public class Platformer2DUserControl : MonoBehaviour
     {
+        public AudioSource Pickup;
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
 
@@ -36,5 +37,12 @@ namespace UnityStandardAssets._2D
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
         }
+        void OnTriggerEnter2D(Collider2D other)
+      	{
+      		if (other.gameObject.tag == "Item"){
+      			Pickup.Play ();
+            Debug.Log("Should be playing");
+      	}
+      }
     }
 }
